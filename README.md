@@ -21,12 +21,14 @@ Following the analysis, the specific ticker “DQ” that user was interested in
 Using multiple “For” loops, we were able to have the script run through the data set for each of the worksheets that contained data for each of the years. A “For” loop “For i = 0 To 11” was used to run through and find each of the tickers in the data set, and another for loop “For i = 2 To RowCount” was used go through all the rows of data. To ensure we were pulling the current & not new ticket in the data, “IF” statements with 2 critiera were used. 
 
 ####To Determine Starting Prices
-If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i - 1, 1).Value <> tickers(tickerIndex) Then
+
+          If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i - 1, 1).Value <> tickers(tickerIndex) Then
           
             tickerStartingPrices(tickerIndex) = Cells(i, 6).Value
 
 ####To Determine Ending Prices
-If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
+
+          If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i + 1, 1).Value <> tickers(tickerIndex) Then
             
             tickerEndingPrices(tickerIndex) = Cells(i, 6).Value
 
@@ -34,7 +36,8 @@ If Cells(i, 1).Value = tickers(tickerIndex) And Cells(i + 1, 1).Value <> tickers
 By refactoring the initial script, we were able to reduce the run time from 0.304 seconds:
 ![Initial Code Run Time](https://github.com/bdang303/stock-analysis/blob/main/IntiialScriptRunTime.png)
 
-To 0.074 seconds
+To 0.074 seconds:
+
 ![Refactored Code Run Time](https://github.com/bdang303/stock-analysis/blob/main/RefactoredRunTime.png)
 
 
